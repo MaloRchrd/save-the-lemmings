@@ -1,4 +1,4 @@
-
+// Lemmings creation
 
 var Lemming = function(x,y,id, grid,lemBoat) {
   this.id = id;
@@ -46,11 +46,7 @@ Lemming.prototype.reverseScale = function() {
 };
 
 
-/*
-------------------------------------------
----------------  Animation  --------------
-------------------------------------------
-*/
+// Animation of the lemmings based on sprite actions
 
 Lemming.prototype.animating = function(index, spriteAction, loop){
  this.currentAnimation = spriteAction;
@@ -114,6 +110,7 @@ Lemming.prototype.deployingUmbrella = function(index,spriteAction){
   }.bind(this), 300);
 };
 
+// lemmings movement
 
 Lemming.prototype.movement = function(x,y) {
   // clearTimeout(this.movementTimeout);
@@ -200,6 +197,8 @@ Lemming.prototype.movement = function(x,y) {
 
 };
 
+// check colisions
+
 Lemming.prototype.isIntersectRect = function (rect1,rect2) {
   return (rect1.right >= rect2.left && rect1.left <= rect2.right) && (rect1.bottom >= rect2.top && rect1.top <= rect2.bottom);
 };
@@ -208,6 +207,8 @@ Lemming.prototype.stopMovement = function(x,y) {
   clearTimeout(this.movementTimeout);
 
 };
+
+//boundaries for colisions
 
 Lemming.prototype.getBoundaries = function () {
   var annimation = this.currentAnimation[this.indexAnnimation];
@@ -221,6 +222,7 @@ Lemming.prototype.getBoundaries = function () {
   };
 };
 
+//handeling state to keep animation smooth
 
 Lemming.prototype.animateFromState = function (state) {
     if (state != this.state){
@@ -254,42 +256,11 @@ Lemming.prototype.animateFromState = function (state) {
       if (state == 'hitBoat'){
         var score = parseFloat(document.getElementById('score').innerHTML);
         score = score + 1 ;
+        if (score == 15) {
+          var displayWin = document.getElementById('win');
+          displayWin.style.display = "block";
+        }
         document.getElementById('score').innerHTML = score;
       }
     }
 };
-
-
-
-
-
-
-
-// // all lemmings + sidemove
-//
-// var i = 0;
-// var lemmingLeft = 250;
-// var  lemmings= [];
-// var x = setInterval(function () {
-//   if (i<10) {
-//     var lem = new Lemming(lemmingLeft,40,i);
-//     lemmings.push(lem);
-//      lemmingLeft = lemmingLeft + 20;
-//     lem.animating(0,i,fall,true);
-//     lem.movement(0,3);
-//     i++;
-//
-//   } else {
-//     clearInterval(x);
-//   }
-// }, 1000);
-
-
-
-
-// setTimeout(function () {
-// if (lemmings[1]) {
-//   lemmings[1].animating(0,1,fall,true)
-//   lemmings[1].movement(0,3);
-// }
-//  }, 3000);

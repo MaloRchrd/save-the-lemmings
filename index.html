@@ -4,6 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <meta property="og:url" content="https://malorchrd.github.io/save-the-lemmings/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Save the Lemmings" />
+<meta property="og:description" content="save the lemming before they fall in the sea" />
+<meta property="og:image" content="img/save-the-lemmings.png" />
 
 
 <!-- <style src="lemmings.css"media="screen"></style> -->
@@ -118,7 +123,7 @@
     margin: 10px;
     cursor: pointer;
   }
-  .fa:hover{
+  .fa-info:hover{
     color: #29AAE3;
     cursor: pointer;
   }
@@ -129,7 +134,10 @@
  cursor: pointer;
   }
   #win{
+    padding: 30px;
+    background-color: #fff;
     display: none;
+    z-index: 99;
   }
 
   #gameZone{
@@ -147,7 +155,7 @@
   h6{
     line-height: 2;
   }
-  h1,h2{
+  h1,h2,h3{
     color: #29AAE3;
   }
   a{
@@ -175,7 +183,7 @@
       <a href="#"><i id="info" class="fa fa-2x fa-linkedin" aria-hidden="true"></i> Linkedin</a><br>
       <a href="#"><i id="info" class="fa fa-2x fa-github" aria-hidden="true"></i> Github</a><br>
       <a href="#"><i id="info" class="fa fa-2x fa-envelope-o" aria-hidden="true"></i> Email</a><br>
-      <a href="#"><i id="info" class="fa fa-2x fa-user" aria-hidden="true"></i> CV</a><br>
+      <a href="CV-Malo-Richard-fr.pdf"><i id="info" class="fa fa-2x fa-user" aria-hidden="true"></i> CV</a><br>
       </h6>
     </div>
 
@@ -223,12 +231,15 @@
 
 
       </div>
-      <div id="win"class="center">
-
-      <input id="startEasy" class="button" type="button" value="Easy"/>
-      <input id="startHard" class="button" type="button" value="Hard"/>
-      <br>
-
+      <div id="win" class="center" align="center">
+        <h2>Congratulation </h2>
+        <br>
+        <h3>You won !!! </h3>
+        <br>
+        <h3>access my </h3>
+        <br>
+        <input id="cv" class="button" type="button" value="cv"/>
+        <br><br>
 
       </div>
 
@@ -255,12 +266,12 @@
 
 
   document.addEventListener('DOMContentLoaded', function() {
-    // var grid = new Grid (22,44,25);
+    //  old version var grid = new Grid (22,44,25);
     var grid = new Grid (1,1,25);
 
     var lemBoat = new Boat(500,505,1);
 
-    // var sideBar = document.getElementsByClassName('sideBar');
+
 
     var easy = function() {
       document.getElementById('startEasy').remove();
@@ -273,20 +284,13 @@
       console.log(lemmings);
 
       var x = setInterval(function () {
-        if (i<25) {
+        if (i<35) {
           var lem = new Lemming(lemmingLeft,100,i,grid,lemBoat);
           lemmings.push(lem);
-          // function isOdd(num) { return num % 2;};
-          // if (isOdd(i) == 1) {
-            lem.animating(0,umbrella,true);
-            lem.movement(0,1);
+          lem.animating(0,umbrella,true);
+          lem.movement(0,1);
 
-            lem.state ='umbrellaState';
-          // }else {
-          //   lem.animating(0,fall,true);
-          //   lem.movement(0,3);
-          //
-          // }
+          lem.state ='umbrellaState';
           lemmingLeft = Math.floor(Math.random() * 1000) + 1
           i++;
 
@@ -294,7 +298,7 @@
           clearInterval(x);
         }
       }, 1000);
-  // };
+      // };
     };
 
     var hard = function() {
@@ -307,17 +311,17 @@
       var lemmings= [];
 
       var x = setInterval(function () {
-        if (i<25) {
+        if (i<35) {
           var lem = new Lemming(lemmingLeft,100,i,grid,lemBoat);
           lemmings.push(lem);
           // function isOdd(num) { return num % 2;};
           // if (isOdd(i) == 1) {
-            // lem.animating(0,umbrella,true);
-            // lem.movement(0,1);
-            // lem.state ='umbrellaState';
+          // lem.animating(0,umbrella,true);
+          // lem.movement(0,1);
+          // lem.state ='umbrellaState';
           // }else {
-            lem.animating(0,fall,true);
-            lem.movement(0,3);
+          lem.animating(0,fall,true);
+          lem.movement(0,3);
           //
           // }
           lemmingLeft = Math.floor(Math.random() * 1000) + 1
@@ -332,18 +336,17 @@
 
 
 
-var info = function () {
+    var info = function () {
 
-// var sideBar = document.getElementsByClassName('sideBar');
-console.log(sideBar);
-  if (sideBar.style.right == "0px") {
-    sideBar.style.display = "flex";
-    sideBar.style.right = -200 + 'px';
-  } else {
-    sideBar.style.right = 0 + 'px';
-    sideBar.style.display = "flex";
-  }
-};
+      console.log(sideBar);
+      if (sideBar.style.right == "0px") {
+        sideBar.style.display = "flex";
+        sideBar.style.right = -200 + 'px';
+      } else {
+        sideBar.style.right = 0 + 'px';
+        sideBar.style.display = "flex";
+      }
+    };
 
     var startEasy = window.document.getElementById('startEasy');
     startEasy.addEventListener('click', easy, false);
@@ -356,42 +359,16 @@ console.log(sideBar);
     var btnclose = window.document.getElementById('close');
     btnclose.addEventListener('click', info, false);
 
+    var cv = window.document.getElementById('cv');
+    cv.addEventListener('click', info, false);
+
 
 
     function unloadScrollBars() {
-    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
-    document.body.scroll = "no"; // ie only
-}
-unloadScrollBars()
-
-    // level 1
-
-
-    // grid.setRebound(404,414,true);
-    // grid.setRebound(484,497,true);
-    // grid.setRebound(640,650,true);
-    // grid.setRebound(324,324,true);
-    // grid.setRebound(347,347,true);
-    // grid.setRebound(307,307,true);
-    // grid.setRebound(601,601,true);
-    // grid.setRebound(557,557,true);
-    // grid.setRebound(443,450,true);
-    // grid.setRebound(404,404,true);
-    // grid.setRebound(602,602,true);
-    // ;
-    // // grid.setRebound(332,332,true);
-    // grid.tiles[631].isEnd = true;
-
-// var startGame = function() {
-// console.log('yo');
-
-
-
-
-
-
-
-
+      document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+      document.body.scroll = "no"; // ie only
+    }
+    unloadScrollBars()
 
 
     window.onkeydown = function(event){
@@ -400,7 +377,7 @@ unloadScrollBars()
 
       switch(code){
         case 37:
-         event.preventDefault();
+        event.preventDefault();
         //*instructions*
         // alert('gauche');
         lemBoat.animateFromState('moveLeft','boat1');

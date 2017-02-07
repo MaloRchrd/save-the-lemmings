@@ -1,5 +1,5 @@
 
-
+// sound for the game 
 
 var ColisionSound = function(sound) {
   var win = new Audio('sound/YIPPEE.WAV');

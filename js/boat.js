@@ -1,3 +1,5 @@
+// Creation of the boat.
+
 var Boat = function(x,y,id) {
   this.id = id;
   this.container = document.createElement('div');
@@ -33,6 +35,8 @@ var Boat = function(x,y,id) {
 };
 
 
+// animation for movement.
+
 Boat.prototype.animating = function(index, spriteAction, loop){
  this.currentAnimation = spriteAction;
  this.indexAnnimation = index;
@@ -65,6 +69,9 @@ Boat.prototype.stopAnimating = function (spriteAction,index) {
   this.boat.style.top = spriteAction[index].sprite.top + 'px';
 
 };
+
+
+// Movement of the boat
 
 Boat.prototype.movementLeft = function(x) {
  clearTimeout(this.movementTimeout);
@@ -99,10 +106,9 @@ Boat.prototype.stopMovement = function(x) {
 };
 
 
+// boat boundaries for colision
+
 Boat.prototype.getBoundaries = function () {
-  // var annimation = this.currentAnimation[this.indexAnnimation];
-  //   console.log( );
-  //   console.log(annimation);
   return {
     left : this.x,
     top : this.y,
@@ -111,6 +117,7 @@ Boat.prototype.getBoundaries = function () {
   };
 };
 
+//colision with lemmings
 
 Boat.prototype.isIntersectRect = function (rect1,rect2) {
   return (rect1.right >= rect2.left && rect1.left <= rect2.right) && (rect1.bottom >= rect2.top && rect1.top <= rect2.bottom);
@@ -127,6 +134,8 @@ Boat.prototype.isHittingBoat = function (boundary) {
     }
   return false;
 };
+
+// handeling state to keep animation smooth
 
 Boat.prototype.animateFromState = function (state) {
     if (state != this.state){

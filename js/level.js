@@ -1,10 +1,8 @@
 
+// Mostly used in fist attempt to replication the original lemming.
 
-
-
-
-// Level Size 1000x5000
 // Grid creation
+// Level Size 1000x5000
 
 var Tile = function(size, x, y, id) {
 
