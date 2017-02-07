@@ -1,0 +1,473 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+
+<!-- <style src="lemmings.css"media="screen"></style> -->
+
+  <title>Document</title>
+</head>
+
+<style media="screen">
+
+*{
+  margin: 0px;
+  font-family: 'Press Start 2P', cursive;
+  color: #fff;
+
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button:hover {
+  color: #29AAE3;
+}
+.button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 15px;
+  margin-right: 5px;
+  height: 50px;
+  min-width: 100px;
+  background: #2E3192;
+  border: none;
+  outline: none;
+  color: white;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 3px;
+  box-shadow: 0 5px 0px #2E3192;
+  border-bottom: 2px solid #29AAE3;
+  z-index: 100;
+}
+
+#name{
+  text-align: center;
+  margin-top: 20px;
+}
+
+  .player, #aim, #door, .boat{
+    transform: scale(3,3);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering:   -o-crisp-edges;
+
+    z-index: 99;
+  }
+
+  .boat{
+    transform: scale(3,3);
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering:   -o-crisp-edges;
+    z-index: 98;
+  }
+
+  #background-image{
+    background-image: url('img/lemmings-screens2.jpg');
+    width: 1100px;
+    height: 550px;
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    margin: auto;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering:   -o-crisp-edges;
+
+    z-index: 0;
+  }
+  p{
+    color: white;
+    font-size:7px;
+  }
+
+  #scoreDiv{
+    position: absolute;
+    top: 20px;
+    left: 940px;
+  }
+
+
+  #sideBar{
+    right: "-200px";
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    /*left: 0;*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s;
+    display: none;
+    background-color: #2E3192;
+    width: 200px;
+    height: 100%;
+    z-index: 1;
+  }
+
+  #buttonInfo{
+    float: left;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .fa:hover{
+    color: #29AAE3;
+    cursor: pointer;
+  }
+  #close{
+ position: absolute;
+ left: 20px;
+ top: 10px;
+ cursor: pointer;
+  }
+  #win{
+    display: none;
+  }
+
+  #gameZone{
+    position: relative;
+    padding-left:5%;
+    padding-top:5%;
+    padding-right: 5%;
+    width: 100%;
+    height: 100%;
+  }
+  body{
+    /*cursor: none;*/
+    overflow :'hidden';
+  }
+  h6{
+    line-height: 2;
+  }
+  h1,h2{
+    color: #29AAE3;
+  }
+  a{
+    text-decoration: none;
+    color: #29AAE3;
+  }
+
+
+</style>
+
+
+<body id ="body">
+  <div id="sideBar">
+    <div> <i id="close" class="fa fa-times" aria-hidden="true"></i></div>
+    <div class="center" align="center">
+      <h1>RULES</h1>
+      <h6>
+        Catch the Lemmings falling from the sky with your boat using the keyboard arrows
+      </h6>
+      <br>
+      <hr>
+      <br>
+      <h6>
+      Malo Richard <br>
+      <a href="#"><i id="info" class="fa fa-2x fa-linkedin" aria-hidden="true"></i> Linkedin</a><br>
+      <a href="#"><i id="info" class="fa fa-2x fa-github" aria-hidden="true"></i> Github</a><br>
+      <a href="#"><i id="info" class="fa fa-2x fa-envelope-o" aria-hidden="true"></i> Email</a><br>
+      <a href="#"><i id="info" class="fa fa-2x fa-user" aria-hidden="true"></i> CV</a><br>
+      </h6>
+    </div>
+
+
+  </div>
+  <div id="gameZone">
+
+    <div id="background-image" style="position:absolute; top:0 left0 ">
+
+
+
+      <div>
+        <a  id="buttonInfo">
+        <i id="info" class="fa fa-2x fa-info-circle" aria-hidden="true"></i>
+      </a>
+      </div>
+
+
+      <div id="name" >
+
+        <h4>
+          CV Malo Richard <br><br>
+          Dev FullStack JavaScript
+        </h4>
+      </div>
+      <div id="scoreDiv" >
+        <h4>
+          Score :<span id="score" >0 </span>
+        </h4>
+        <br>
+        <div align="center">
+          <h6>
+            Use the keyboard arrows to move <br>
+            left <i class="fa fa-2x fa-caret-square-o-left" aria-hidden="true"></i><br>
+            right <i class="fa fa-2x fa-caret-square-o-right" aria-hidden="true"></i>
+          </h6>
+        </div>
+
+      </div>
+      <div class="center">
+
+      <input id="startEasy" class="button" type="button" value="Easy"/>
+      <input id="startHard" class="button" type="button" value="Hard"/>
+      <br>
+
+
+      </div>
+      <div id="win"class="center">
+
+      <input id="startEasy" class="button" type="button" value="Easy"/>
+      <input id="startHard" class="button" type="button" value="Hard"/>
+      <br>
+
+
+      </div>
+
+      <div id="parent"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- <div id="mouseContainer">
+    <img src="lemming-sprite.png" id="aim" alt="sprite aim" />
+  </div> -->
+  <script type="text/javascript" src="lemming.js" ></script>
+  <script type="text/javascript" src="sprite-object.js"></script>
+  <script type="text/javascript" src="boat.js" ></script>
+  <script type="text/javascript" src="sound.js" ></script>
+  <script type="text/javascript" src="level.js" ></script>
+  <script src="https://use.fontawesome.com/29478230cc.js"></script>
+  <!-- <script type="text/javascript" src="mouse.js" ></script> -->
+  <script type="text/javascript">
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // var grid = new Grid (22,44,25);
+    var grid = new Grid (1,1,25);
+
+    var lemBoat = new Boat(500,505,1);
+
+    // var sideBar = document.getElementsByClassName('sideBar');
+
+    var easy = function() {
+      document.getElementById('startEasy').remove();
+      document.getElementById('startHard').remove();
+      ColisionSound('soundStart');
+
+      var i = 0;
+      var lemmingLeft = 150;
+      var lemmings= [];
+      console.log(lemmings);
+
+      var x = setInterval(function () {
+        if (i<25) {
+          var lem = new Lemming(lemmingLeft,100,i,grid,lemBoat);
+          lemmings.push(lem);
+          // function isOdd(num) { return num % 2;};
+          // if (isOdd(i) == 1) {
+            lem.animating(0,umbrella,true);
+            lem.movement(0,1);
+
+            lem.state ='umbrellaState';
+          // }else {
+          //   lem.animating(0,fall,true);
+          //   lem.movement(0,3);
+          //
+          // }
+          lemmingLeft = Math.floor(Math.random() * 1000) + 1
+          i++;
+
+        } else {
+          clearInterval(x);
+        }
+      }, 1000);
+  // };
+    };
+
+    var hard = function() {
+      document.getElementById('startEasy').remove();
+      document.getElementById('startHard').remove();
+      ColisionSound('soundStart');
+
+      var i = 0;
+      var lemmingLeft = 150;
+      var lemmings= [];
+
+      var x = setInterval(function () {
+        if (i<25) {
+          var lem = new Lemming(lemmingLeft,100,i,grid,lemBoat);
+          lemmings.push(lem);
+          // function isOdd(num) { return num % 2;};
+          // if (isOdd(i) == 1) {
+            // lem.animating(0,umbrella,true);
+            // lem.movement(0,1);
+            // lem.state ='umbrellaState';
+          // }else {
+            lem.animating(0,fall,true);
+            lem.movement(0,3);
+          //
+          // }
+          lemmingLeft = Math.floor(Math.random() * 1000) + 1
+          i++;
+
+
+        } else {
+          clearInterval(x);
+        }
+      }, 1000);
+    };
+
+
+
+var info = function () {
+
+// var sideBar = document.getElementsByClassName('sideBar');
+console.log(sideBar);
+  if (sideBar.style.right == "0px") {
+    sideBar.style.display = "flex";
+    sideBar.style.right = -200 + 'px';
+  } else {
+    sideBar.style.right = 0 + 'px';
+    sideBar.style.display = "flex";
+  }
+};
+
+    var startEasy = window.document.getElementById('startEasy');
+    startEasy.addEventListener('click', easy, false);
+    var startHard = window.document.getElementById('startHard');
+    startHard.addEventListener('click', hard, false);
+
+    var btnInfo = window.document.getElementById('buttonInfo');
+    btnInfo.addEventListener('click', info, false);
+
+    var btnclose = window.document.getElementById('close');
+    btnclose.addEventListener('click', info, false);
+
+
+
+    function unloadScrollBars() {
+    document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+    document.body.scroll = "no"; // ie only
+}
+unloadScrollBars()
+
+    // level 1
+
+
+    // grid.setRebound(404,414,true);
+    // grid.setRebound(484,497,true);
+    // grid.setRebound(640,650,true);
+    // grid.setRebound(324,324,true);
+    // grid.setRebound(347,347,true);
+    // grid.setRebound(307,307,true);
+    // grid.setRebound(601,601,true);
+    // grid.setRebound(557,557,true);
+    // grid.setRebound(443,450,true);
+    // grid.setRebound(404,404,true);
+    // grid.setRebound(602,602,true);
+    // ;
+    // // grid.setRebound(332,332,true);
+    // grid.tiles[631].isEnd = true;
+
+// var startGame = function() {
+// console.log('yo');
+
+
+
+
+
+
+
+
+
+
+    window.onkeydown = function(event){
+      // event.preventDefault();
+      var code = event.keyCode;
+
+      switch(code){
+        case 37:
+         event.preventDefault();
+        //*instructions*
+        // alert('gauche');
+        lemBoat.animateFromState('moveLeft','boat1');
+        lemBoat.container.style.transform = "scale(-1, 1)";
+
+
+        break;
+        case 39:
+        event.preventDefault();
+        lemBoat.animateFromState('moveRight','boat2');
+        lemBoat.container.style.transform = "scale(1, 1)";
+
+
+        //alert('right');
+
+
+        break;
+        case 32:
+        event.preventDefault();
+
+
+        break;
+        event.preventDefault();
+        case 13:
+
+        break;
+      };
+    };
+
+    window.onkeyup = function(event){
+      var code = event.keyCode;
+
+      switch(code){
+        case 37:
+        //*instructions*
+        // alert('gauche');
+        lemBoat.stopMovement();
+        lemBoat.container.style.transform = "scale(-1, 1)";
+        lemBoat.animateFromState('stop','boat1');
+
+        break;
+        case 39:
+        lemBoat.stopMovement();
+        lemBoat.container.style.transform = "scale(1, 1)";
+        lemBoat.animateFromState('stop','boat1');
+        //alert('right');
+
+
+        break;
+        case 32:
+        // alert('space bar');
+
+        break;
+        case 13:
+
+        break;
+      };
+    };
+
+
+
+
+
+  });
+</script>
+
+</body>
+
+
+</html>

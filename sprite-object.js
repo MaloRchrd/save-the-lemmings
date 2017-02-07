@@ -1,0 +1,1074 @@
+
+// Positioning sprite image
+// each variable is a specific movement
+
+/*
+----------------------------------
+---------------walk---------------
+----------------------------------
+*/
+
+var walk = [{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:420,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:360,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:300,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:240,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:180,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:120,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:60,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:0,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:-57,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:710,
+    left:-120,
+  }
+}];
+
+
+/*
+----------------------------------
+---------------stop---------------
+----------------------------------
+*/
+
+var stop = [{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:425,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:365,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:305,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:245,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:185,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:125,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:65,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:5,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:-55,
+  }
+},
+{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:530,
+    left:-115,
+  }
+}];
+
+/*
+----------------------------------
+---------------fall---------------
+----------------------------------
+*/
+
+
+var fall = [{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:591,
+    left:423,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:591,
+    left:363,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:591,
+    left:303,
+  }
+},
+{
+  size:{
+    height:30,
+    width:20,
+  },
+  sprite:{
+    top:591,
+    left:243,
+  }
+}];
+
+/*
+--------------------------------------
+------------Deployumbrella------------
+--------------------------------------
+*/
+
+var deployUmbrella = [{
+  size:{
+    height:30,
+    width:21,
+  },
+  sprite:{
+    top:573,
+    left:185,
+  }
+},
+{
+  size:{
+    height:30,
+    width:21,
+  },
+  sprite:{
+    top:573,
+    left:123,
+  }
+},
+{
+  size:{
+    height:30,
+    width:22,
+  },
+  sprite:{
+    top:573,
+    left:62,
+  }
+},
+{
+  size:{
+    height:42,
+    width:25,
+  },
+  sprite:{
+    top:587,
+    left:3,
+  }
+},
+{
+  size:{
+    height:48,
+    width:27,
+  },
+  sprite:{
+    top:590,
+    left:-52,
+  }
+}];
+
+
+var umbrella = [{
+  size:{
+    height:48,
+    width:27,
+  },
+  sprite:{
+    top:590,
+    left:-52,
+  }
+},
+{
+  size:{
+    height:45,
+    width:27,
+  },
+  sprite:{
+    top:590,
+    left:-112,
+  }
+},
+{
+  size:{
+    height:45,
+    width:27,
+  },
+  sprite:{
+    top:590,
+    left:-172,
+  }
+},
+{
+  size:{
+    height:42,
+    width:27,
+  },
+  sprite:{
+    top:590,
+    left:-232,
+  }
+}];
+
+/*
+----------------------------------
+---------------finish---------------
+----------------------------------
+*/
+var finish = [{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:650,
+    left:422,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:641,
+    left:362,
+  }
+},
+{
+  size:{
+    height:32,
+    width:15,
+  },
+  sprite:{
+    top:647,
+    left:305,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:242,
+  }
+},{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:182,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:122,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:62,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:2,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:-58,
+  }
+},
+{
+  size:{
+    height:30,
+    width:12,
+  },
+  sprite:{
+    top:650,
+    left:-78,
+  }
+}
+];
+
+/*
+----------------------------------
+---------------digX---------------
+----------------------------------
+*/
+var digX = [{
+  size:{
+    height:36,
+    width:30,
+  },
+  sprite:{
+    top:230,
+    left:422,
+  }
+},
+{
+  size:{
+    height:36,
+    width:33,
+  },
+  sprite:{
+    top:230,
+    left:362,
+  }
+},
+{
+  size:{
+    height:36,
+    width:33,
+  },
+  sprite:{
+    top:230,
+    left:302,
+  }
+},
+{
+  size:{
+    height:36,
+    width:33,
+  },
+  sprite:{
+    top:230,
+    left:242,
+  }
+},
+{
+  size:{
+    height:36,
+    width:27,
+  },
+  sprite:{
+    top:230,
+    left:182,
+  }
+},{
+  size:{
+    height:36,
+    width:27,
+  },
+  sprite:{
+    top:230,
+    left:122,
+  }
+},
+{
+  size:{
+    height:36,
+    width:30,
+  },
+  sprite:{
+    top:230,
+    left:68,
+  }
+},
+{
+  size:{
+    height:36,
+    width:33,
+  },
+  sprite:{
+    top:230,
+    left:8,
+  }
+}];
+
+/*
+----------------------------------
+---------------kill---------------
+----------------------------------
+*/
+var kill = [{
+  size:{
+    height:30,
+    width:15,
+  },
+  sprite:{
+    top:110,
+    left:420,
+  }
+},
+{
+  size:{
+    height:30,
+    width:15,
+  },
+  sprite:{
+    top:110,
+    left:360,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:302,
+  }
+},
+{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:110,
+    left:245,
+  }
+},
+{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:110,
+    left:185,
+  }
+},
+{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:110,
+    left:125,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:62,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:2,
+  }
+},{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-55,
+  }
+},{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-118,
+  }
+},{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-181,
+  }
+},{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-235,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-301,
+  }
+},{
+  size:{
+    height:30,
+    width:15,
+  },
+  sprite:{
+    top:110,
+    left:-358,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-421,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:110,
+    left:-475,
+  }
+},
+{
+  size:{
+    height:30,
+    width:18,
+  },
+  sprite:{
+    top:50,
+    left:422,
+  }
+},
+{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:50,
+    left:365,
+  }
+},
+{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:50,
+    left:305,
+  }
+},
+{
+  size:{
+    height:30,
+    width:24,
+  },
+  sprite:{
+    top:50,
+    left:245,
+  }
+},{
+  size:{
+    height:30,
+    width:30,
+  },
+  sprite:{
+    top:50,
+    left:188,
+  }
+},
+{
+  size:{
+    height:30,
+    width:36,
+  },
+  sprite:{
+    top:50,
+    left:131,
+  }
+},{
+  size:{
+    height:30,
+    width:36,
+  },
+  sprite:{
+    top:50,
+    left:74,
+  }
+},
+{
+  size:{
+    height:30,
+    width:48,
+  },
+  sprite:{
+    top:50,
+    left:17,
+  }
+},
+{
+  size:{
+    height:30,
+    width:42,
+  },
+  sprite:{
+    top:50,
+    left:-46,
+  }
+},{
+  size:{
+    height:30,
+    width:39,
+  },
+  sprite:{
+    top:50,
+    left:-106,
+  }
+},{
+  size:{
+    height:30,
+    width:45,
+  },
+  sprite:{
+    top:50,
+    left:-163,
+  }
+},{
+  size:{
+    height:30,
+    width:39,
+  },
+  sprite:{
+    top:50,
+    left:-229,
+  }
+},
+{
+  size:{
+    height:30,
+    width:39,
+  },
+  sprite:{
+    top:50,
+    left:-352,
+  }
+},
+{
+  size:{
+    height:30,
+    width:21,
+  },
+  sprite:{
+    top:50,
+    left:-412,
+  }
+},{
+  size:{
+    height:30,
+    width:21,
+  },
+  sprite:{
+    top:50,
+    left:-475,
+  }
+},{
+  size:{
+    height:30,
+    width:21,
+  },
+  sprite:{
+    top:50,
+    left:-475,
+  }
+}];
+
+/*
+-----------------------------------------
+---------------aim (mouse)---------------
+-----------------------------------------
+*/
+var aimSprite = [{
+  size:{
+    height:45,
+    width:45,
+  },
+  sprite:{
+    top:-130,
+    left:437,
+  }
+},
+{
+  size:{
+    height:45,
+    width:45,
+  },
+  sprite:{
+    top:-130,
+    left:377,
+  }
+}];
+
+
+/*
+-----------------------------------------
+----------------- door ------------------
+-----------------------------------------
+*/
+var door = [{
+  size:{
+    height:38,
+    width:124,
+  },
+  sprite:{
+    top:675,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:43,
+    width:124,
+  },
+  sprite:{
+    top:557,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:49,
+    width:124,
+  },
+  sprite:{
+    top:441,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:49,
+    width:124,
+  },
+  sprite:{
+    top:327,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:57,
+    width:124,
+  },
+  sprite:{
+    top:211,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:57,
+    width:124,
+  },
+  sprite:{
+    top:89,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:65,
+    width:124,
+  },
+  sprite:{
+    top:-27,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:65,
+    width:124,
+  },
+  sprite:{
+    top:-147,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:65,
+    width:124,
+  },
+  sprite:{
+    top:-267,
+    left:-543,
+  }
+},
+{
+  size:{
+    height:75,
+    width:124,
+  },
+  sprite:{
+    top:-387,
+    left:-543,
+  }
+}
+];
+
+/*
+-----------------------------------------
+------------------boat2------------------
+-----------------------------------------
+*/
+var boat2 = [{
+  size:{
+    height:31,
+    width:75,
+  },
+  sprite:{
+    top:-438,
+    left:179,
+  }
+},
+{
+size:{
+    height:31,
+    width:75,
+  },
+sprite:{
+  top:-438,
+  left:89,
+}
+},{
+size:{
+    height:31,
+    width:75,
+  },
+sprite:{
+  top:-438,
+  left:-1,
+}
+}];
+
+/*
+-----------------------------------------
+------------------boat1------------------
+-----------------------------------------
+*/
+var boat1 = [{
+  size:{
+    height:31,
+    width:75,
+  },
+  sprite:{
+    top:-348,
+    left:179,
+  }
+},
+{
+size:{
+    height:31,
+    width:75,
+  },
+sprite:{
+  top:-348,
+  left:89,
+}
+},{
+size:{
+    height:31,
+    width:75,
+  },
+sprite:{
+  top:-348,
+  left:-1,
+}
+}];
