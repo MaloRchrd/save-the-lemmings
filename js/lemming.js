@@ -256,7 +256,7 @@ Lemming.prototype.animateFromState = function (state) {
       if (state == 'hitBoat'){
         var score = parseFloat(document.getElementById('score').innerHTML);
         score = score + 1 ;
-        if (score == 15) {
+        if (score == 10) {
           var displayWin = document.getElementById('win');
           displayWin.style.display = "block";
         }
