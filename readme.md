@@ -17,10 +17,10 @@ Demo : [save-the-lemmings](https://malorchrd.github.io/save-the-lemmings/)
 
 ## Main Learnings
 
--Factory function
--Sprite animation
--Element collision
--keyboard events handeling
+- Factory function
+- Sprite animation
+- Element collision
+- keyboard events handeling
 
 
 ## Optimisations
